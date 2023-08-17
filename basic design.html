@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic design for plugin setting</title>
+    <style>
+      form {
+        max-width: 768px;
+        margin: 10px auto;
+        padding: 10px 20px;
+        background: #f4f7f8;
+        border-radius: 8px;
+      }
+
+      input[type="text"] {
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        font-size: 16px;
+        height: auto;
+        margin: 0;
+        outline: 0;
+        padding: 15px;
+        width: 100%;
+        background-color: #e8eeef;
+        color: #8a97a0;
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+        margin-bottom: 30px;
+      }
+
+      input[type="submit"] {
+        padding: 19px 39px 18px 39px;
+        color: #fff;
+        background-color: #4bc970;
+        font-size: 18px;
+        text-align: center;
+        font-style: normal;
+        border-radius: 5px;
+        width: 100%;
+        border: 1px solid #3ac162;
+        border-width: 1px 1px 3px;
+        box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+        margin-bottom: 10px;
+      }
+
+      input[type="radio"],
+      input[type="checkbox"] {
+        margin: 0 4px 8px 0;
+      }
+
+      fieldset {
+        margin-bottom: 30px;
+        border: none;
+        overflow: hidden;
+      }
+
+      legend {
+        font-size: 1.4em;
+        margin-bottom: 10px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      label.light {
+        font-weight: 300;
+        display: inline;
+      }
+
+      .number {
+        background-color: #5fcf80;
+        color: #fff;
+        height: 30px;
+        width: 30px;
+        display: inline-block;
+        font-size: 0.8em;
+        margin-right: 4px;
+        line-height: 30px;
+        text-align: center;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+        border-radius: 100%;
+      }
+
+      h1 {
+        margin: 0 0 30px 0;
+        text-align: center;
+      }
+      .cpm_table {
+        width: 100%;
+      }
+      .cpm_table tr:first-child th {
+        text-align: center;
+      }
+      .cpm_table tr th {
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <form method="post">
+      <h1>Payment Details</h1>
+
+      <fieldset>
+        <legend><span class="number">1</span> Stripe Details</legend>
+
+        <label for="stripe_test_key">Test Secret Key : </label>
+        <input
+          type="text"
+          id="secret_test_key"
+          name="secret_test_key"
+          value=""
+        />
+
+        <label for="stripe_live_key">Live Secret Key : </label>
+        <input
+          type="text"
+          id="secret_live_key"
+          name="secret_live_key"
+          value=""
+        />
+
+        <label for="stripe_test_key">Test Publishable Key : </label>
+        <input
+          type="text"
+          id="publishable_test_key"
+          name="publishable_test_key"
+          value=""
+        />
+
+        <label for="stripe_live_key">Live Publishable Key : </label>
+        <input
+          type="text"
+          id="publishable_live_key"
+          name="publishable_live_key"
+          value=""
+        />
+
+        <div class="checkbox_check" style="display: flex">
+          <label for="live test checkbox">Enable Test mode?</label
+          >&nbsp;&nbsp;&nbsp;
+          <input
+            type="checkbox"
+            name="testliveswitch"
+            class="onoffswitch-checkbox"
+            id="myonoffswitch"
+          />
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend><span class="number">2</span>Package Price</legend>
+        <table class="cpm_table">
+          <tr>
+            <th>&nbsp;</th>
+            <th>Price</th>
+            <th>Package</th>
+          </tr>
+          <tr>
+            <th>College/Early Career</th>
+            <td>
+              <input type="text" name="early_price" value="" />
+            </td>
+            <td>
+              <input type="text" name="early_package" value="" />
+            </td>
+          </tr>
+          <tr>
+            <th>Experienced</th>
+            <td>
+              <input type="text" name="experienced_price" value="" />
+            </td>
+            <td>
+              <input type="text" name="experienced_package" value="" />
+            </td>
+          </tr>
+          <tr>
+            <th>Management or Executive</th>
+            <td>
+              <input type="text" name="management_price" value="" />
+            </td>
+            <td>
+              <input type="text" name="management_package" value="" />
+            </td>
+          </tr>
+          <tr>
+            <th>Military Transaction</th>
+            <td>
+              <input type="text" name="military_price" value="" />
+            </td>
+            <td>
+              <input type="text" name="military_package" value="" />
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+      <input type="submit" value="save" name="save" />
+    </form>
+  </body>
+</html>
